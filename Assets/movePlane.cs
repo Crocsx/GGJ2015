@@ -13,7 +13,7 @@ public class movePlane : MonoBehaviour {
 	void Start () {
 	}
 	
-	void Update () {
+	void LateUpdate () {
 		newOffsetFromCamera = offsetFromCamera - (transform.position - Camera.main.transform.position);
 		TextureOffset += newOffsetFromCamera.x * speed * 0.005f;
 		transform.position = new Vector3(Camera.main.transform.position.x,Camera.main.transform.position.y,transform.position.z);
