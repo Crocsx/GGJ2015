@@ -10,6 +10,7 @@ public class CharacterMovements : MonoBehaviour {
      private Animator anim;
      public bool isActiveJetPack =false;
     
+    public float MaxAirTimeLeft = 10;
     public float AirTimeLeft = 10;
 	// Use this for initialization
 	void Start () {

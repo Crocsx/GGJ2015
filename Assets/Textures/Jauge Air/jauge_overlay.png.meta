@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 5ca5df54484755f4294579b3272f235a
+guid: 5b253056e0d71014fa0b8cf943290159
 TextureImporter:
   fileIDToRecycleName:
-    21300000: jauge008
+    21300000: jauge_overlay
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
