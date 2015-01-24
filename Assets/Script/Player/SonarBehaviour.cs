@@ -19,9 +19,11 @@ public class SonarBehaviour : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	void OnTriggerEnter2D(Collider2D col){
-		if(col.gameObject.layer == 10){
-			Debug.Log("thing detected");
-			col.renderer.material.color = Color.red;
+		if(col.transform.CompareTag("Piege")){
+            if (col.GetComponent<pEnemy>())
+                col.GetComponent<pEnemy>().ActiveParticle();
+            else if(col.GetComponent<pSpawn>())
+                col.GetComponent<pSpawn>().ActiveParticle();
 		}
 
 
