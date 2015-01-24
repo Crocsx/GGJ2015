@@ -11,9 +11,10 @@ public class pEnemy : MonoBehaviour {
         _target = GameObject.FindGameObjectWithTag("Player").transform;
 	}
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.transform.CompareTag("Player"))
+        Debug.Log("qdqsdqsd");
+        if (other.transform.CompareTag("Player"))
             Effect();
     }
 

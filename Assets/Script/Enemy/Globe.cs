@@ -5,7 +5,6 @@ using System.Collections;
 public class Globe : pEnemy {
     public float _timePerSwitchState;
     public float _timePerAnimation;
-    public int _degats;
     public int currentState;
     private enum globeState : byte { big = 1, goingBig, goingSmall, Small};
     private float counter;

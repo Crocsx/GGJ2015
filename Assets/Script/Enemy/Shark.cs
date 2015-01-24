@@ -6,7 +6,6 @@ public class Shark : pEnemy {
     public int _distanceParcour;
     public float _timeForMove;
     public bool _side;
-    public int _degats;
 
     private Vector3 _posMaxLeft;
     private Vector3 _posMaxRight;
