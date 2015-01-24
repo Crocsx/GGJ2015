@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: bdb7fc21c239d3945847217f8da3aa97
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: seby_walk0003
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
