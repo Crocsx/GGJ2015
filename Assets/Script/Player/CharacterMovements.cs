@@ -46,6 +46,7 @@ public class CharacterMovements : MonoBehaviour {
 			_grounded = false;
 
 		if(Input.GetButton("Jump")){
+			maxSpeed *= 0.5f;
 			if(_grounded){
 				rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, maxSpeed);//jump
 			}
