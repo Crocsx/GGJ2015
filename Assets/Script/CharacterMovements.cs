@@ -36,11 +36,7 @@ public class CharacterMovements : MonoBehaviour {
 		
 		Vector2 horizontalMove = rigidbody2D.velocity;
 		horizontalMove.y = 0;
-		float distance =  horizontalMove.magnitude * Time.fixedDeltaTime;
-		horizontalMove.Normalize();
-		Debug.Log(distance);
 		for(int i = 0;i < 2; i++){
-			Debug.DrawRay(new Vector2(transform.position.x,transform.position.y - renderer.bounds.size.y * 0.5f + renderer.bounds.size.y *i),horizontalMove *renderer.bounds.size.y *0.55f,Color.red);
 			hit = Physics2D.Raycast( new Vector2(transform.position.x,transform.position.y - renderer.bounds.size.y * 0.5f + renderer.bounds.size.y *i),horizontalMove,renderer.bounds.size.y *0.55f,~(1<<9));
 			if(hit.distance > 0)
 				rigidbody2D.velocity = new Vector3(0, rigidbody2D.velocity.y, 0);
