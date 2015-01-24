@@ -3,8 +3,14 @@ using System.Collections;
 
 public class CharacterRessources : ILife {
 	// Use this for initialization
-	void Start () {
+
+	public bool isDead;
+
+	private Animator anim;
 	
+	void Start () {
+		isDead = false;
+		anim = gameObject.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -14,6 +20,7 @@ public class CharacterRessources : ILife {
 
     public override void Die()
     {
-        Debug.Log("Lose");
+        isDead = true;
+		anim.SetBool("isDead", isDead);
     }
 }
