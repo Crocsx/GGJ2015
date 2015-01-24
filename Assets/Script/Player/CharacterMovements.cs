@@ -71,6 +71,9 @@ public class CharacterMovements : MonoBehaviour {
     {
         freezed = false;
     }
+    public void onDeath(){
+    	
+    }
 	void Flip(){
 		facingRight = !facingRight;
 		Vector3 scale = transform.localScale;
