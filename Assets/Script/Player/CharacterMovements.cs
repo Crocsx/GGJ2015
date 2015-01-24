@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CharacterMovements : MonoBehaviour {
-
+    public bool freezed = false; 
 	public float maxSpeed = 10F;
      public bool facingRight =true ; 
      public bool _grounded = false;
@@ -15,7 +15,10 @@ public class CharacterMovements : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+    void Update()
+    {
+        if (freezed)
+            return;
 		AirTimeLeft -= Time.deltaTime;
 		if(AirTimeLeft < 0){
 			Debug.LogWarning("NO MORE AIR!!!");
@@ -55,7 +58,16 @@ public class CharacterMovements : MonoBehaviour {
 		}
 		
 	}
-	
+
+    public void Freeze(int duration)
+    {
+        freezed = true;
+        Invoke("deFreeze", duration);
+    }
+    public void deFreeze()
+    {
+        freezed = false;
+    }
 	void Flip(){
 		facingRight = !facingRight;
 		Vector3 scale = transform.localScale;
