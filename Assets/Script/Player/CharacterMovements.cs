@@ -4,9 +4,10 @@ using System.Collections;
 public class CharacterMovements : MonoBehaviour {
 
 	public float maxSpeed = 10F;
-     public bool facingRight =true ; 
-     public bool _grounded = false;
-     public Transform groundLabel;
+    public bool facingRight =true;
+    public bool freezed = false; 
+    public bool _grounded = false;
+    public Transform groundLabel;
     
 	// Use this for initialization
 	void Start () {
@@ -15,6 +16,8 @@ public class CharacterMovements : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (freezed)
+            return;
 		float move = Input.GetAxis("Horizontal");
 		rigidbody2D.velocity = new Vector2(move*maxSpeed, rigidbody2D.velocity.y);
 
@@ -34,6 +37,16 @@ public class CharacterMovements : MonoBehaviour {
 			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, maxSpeed);// maxSpeed;
 		}
 	}
+
+    public void Freeze(int duration)
+    {
+        freezed = true;
+        Invoke("deFreeze", duration);
+    }
+    public void deFreeze()
+    {
+        freezed = false;
+    }
 
 	void Flip(){
 		facingRight = !facingRight;

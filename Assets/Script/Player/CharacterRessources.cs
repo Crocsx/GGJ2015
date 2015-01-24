@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class pSpawne : MonoBehaviour {
-
+public class CharacterRessources : ILife {
 	// Use this for initialization
 	void Start () {
 	
@@ -12,4 +11,9 @@ public class pSpawne : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public override void Die()
+    {
+
+    }
 }
