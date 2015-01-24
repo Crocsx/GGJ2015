@@ -8,6 +8,7 @@ public class CharacterMovements : MonoBehaviour {
      public bool _grounded = false;
      public Transform groundLabel;
     
+    public float AirTimeLeft = 10;
 	// Use this for initialization
 	void Start () {
 	
@@ -15,6 +16,11 @@ public class CharacterMovements : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		AirTimeLeft -= Time.deltaTime;
+		if(AirTimeLeft < 0){
+			Debug.LogWarning("NO MORE AIR!!!");
+		}
+		
 		float move = Input.GetAxis("Horizontal");
 		rigidbody2D.velocity = new Vector2(move*maxSpeed, rigidbody2D.velocity.y);
 
@@ -30,9 +36,16 @@ public class CharacterMovements : MonoBehaviour {
 		}else
 			_grounded = false;
 
-		if(Input.GetButton("Jump") && _grounded){
-			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, maxSpeed);// maxSpeed;
+		if(Input.GetButton("Jump")){
+			if(_grounded){
+				rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, maxSpeed);//jump
+			}
+			if( AirTimeLeft > 0 && rigidbody2D.velocity.y < 0){
+				rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, maxSpeed);//boost
+				AirTimeLeft -= 1;
+			}
 		}
+		
 	}
 
 	void Flip(){
