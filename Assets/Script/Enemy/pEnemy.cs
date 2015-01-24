@@ -13,7 +13,6 @@ public class pEnemy : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("qdqsdqsd");
         if (other.transform.CompareTag("Player"))
             Effect();
     }

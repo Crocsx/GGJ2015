@@ -19,7 +19,6 @@ public class SonarBehaviour : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	void OnTriggerEnter2D(Collider2D col){
-		Debug.Log(col.gameObject.layer);
 		if(col.gameObject.layer == 10){
 			Debug.Log("thing detected");
 			col.renderer.material.color = Color.red;
