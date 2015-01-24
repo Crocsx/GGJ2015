@@ -2,7 +2,9 @@ fileFormatVersion: 2
 guid: 7e5033ecfe5da474897317986638943c
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - sonar: {fileID: 100000, guid: 77c3f2e3f27b8044198314577a0b3448, type: 2}
+  - watcherCam: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
