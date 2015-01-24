@@ -59,7 +59,6 @@ public class Murene : pEnemy
         {
             stepMove += Time.deltaTime;
             totalTime += Time.deltaTime;
-            Debug.Log(_posActual+" " +_posTarget);
             Vector3 newMove = Vector3.Lerp(_posActual, _posTarget, stepMove/(_timeForMove * 0.5F) );
             _transform.position = newMove;
 
