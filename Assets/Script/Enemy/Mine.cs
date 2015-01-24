@@ -46,7 +46,6 @@ public class Mine : pEnemy {
 			Effect();
 		
 	    if(Vector3.Distance(_target.transform.position, transform.position) < _detectionRange){
-	    Debug.Log("activated");
         	activated = true;
         }
 	}
