@@ -4,7 +4,7 @@ using System.Collections;
 public class CharacterRessources : ILife {
 	// Use this for initialization
 
-	public bool isDead;
+	public static bool isDead;
 
 	private Animator anim;
 	

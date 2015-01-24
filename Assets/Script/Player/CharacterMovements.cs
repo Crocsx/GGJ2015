@@ -19,7 +19,8 @@ public class CharacterMovements : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
-
+    	if(CharacterRessources.isDead != true){
+    		
     	// if(isActiveJetPack)
     		// isActiveJetPack = false;
         if (freezed)
@@ -60,6 +61,7 @@ public class CharacterMovements : MonoBehaviour {
 				AirTimeLeft -= 1;
 			}
 		}		
+    	}
 	}
 
     public void Freeze(float duration)
