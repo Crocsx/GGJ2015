@@ -65,6 +65,7 @@ public class CharacterMovements : MonoBehaviour {
     public void Freeze(float duration)
     {
         freezed = true;
+		rigidbody2D.velocity = new Vector2(0,0);
         Invoke("deFreeze", duration);
     }
     public void deFreeze()
