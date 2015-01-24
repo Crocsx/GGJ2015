@@ -4,7 +4,6 @@ using System.Collections;
 public class Mine : pEnemy {
     public float _timeBeforeExplosion;
     public float _detectionRange;
-    public int _degats;
 
     private float countdown;
 	// Use this for initialization

@@ -5,7 +5,6 @@ public class Ancre : pEnemy {
     public float _balancingWidth;
     public float _balancingHeight;
     public float _timePerBalance;
-    public int _degats;
     public bool _side;
 
     private Vector3 _posMaxLeft;
