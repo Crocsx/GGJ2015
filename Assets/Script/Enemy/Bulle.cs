@@ -10,7 +10,6 @@ public class Bulle : pEnemy
     void Start()
     {
         base.Start();
-        Debug.Log(_transform.parent.up);
         _direction = _transform.parent.right;
         _transform.eulerAngles = _transform.parent.eulerAngles;
 

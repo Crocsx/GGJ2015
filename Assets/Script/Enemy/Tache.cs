@@ -9,7 +9,7 @@ public class Tache : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Translate(-Vector3.up * Time.deltaTime);
+        transform.Translate(-Vector3.up * Time.deltaTime,Space.World);
 	}
 
     public void Active(float duration)
