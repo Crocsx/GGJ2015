@@ -9,7 +9,8 @@ public class Missile : pEnemy {
 	// Use this for initialization
 	void Start () {
         base.Start();
-        _direction = _transform.parent.up;
+        _direction = _transform.parent.right;
+        _transform.eulerAngles = _transform.parent.eulerAngles;
 	}
 	
 	// Update is called once per frame
