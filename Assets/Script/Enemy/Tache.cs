@@ -14,12 +14,6 @@ public class Tache : MonoBehaviour {
 
     public void Active(float duration)
     {
-        Debug.Log("duration");
-        Invoke("killMe", duration);
-    }
-    void killMe()
-    {
-        Debug.Log("kill");
-        GameObject.Destroy(this);
+        Destroy(gameObject, duration);
     }
 }

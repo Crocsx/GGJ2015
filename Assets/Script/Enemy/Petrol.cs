@@ -13,9 +13,10 @@ public class Petrol : pEnemy {
     {
         Transform cameraTransform = Camera.main.transform;
         Vector3 angles = new Vector3(-90, 0, 0);
-        Transform tache = Instantiate(tachePetrol, cameraTransform.transform.position + Vector3.forward, Quaternion.Euler(angles)) as Transform;
+        GameObject tache = Instantiate(tachePetrol, cameraTransform.transform.position + Vector3.forward, Quaternion.Euler(angles)) as GameObject;
+        Debug.Log(tache.transform);
         tache.transform.GetComponent<Tache>().Active(_dureeTache);
-        tache.parent = cameraTransform;
+        tache.transform.parent = cameraTransform;
     }
 
 	// Update is called once per frame

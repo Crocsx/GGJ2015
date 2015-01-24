@@ -15,7 +15,7 @@ public class Bulle : pEnemy
     // Update is called once per frame
     void Update()
     {
-        _transform.Translate(_direction * (Time.deltaTime * 10));
+        _transform.Translate(_direction * (Time.deltaTime * _speed));
     }
 
     public override void Effect()
