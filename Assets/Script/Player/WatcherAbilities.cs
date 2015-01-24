@@ -20,7 +20,7 @@ public class WatcherAbilities : MonoBehaviour {
 			if (Physics.Raycast (ray, out hit, Mathf.Infinity)) {
 				Vector3 TargetPoint = new Vector3(hit.point.x, hit.point.y, 0);
 				GameObject go = Instantiate(sonar, TargetPoint, Quaternion.identity) as GameObject;
-				Debug.Log(Camera.main.ScreenToViewportPoint(Input.mousePosition));
+				// Debug.Log(Camera.main.ScreenToViewportPoint(Input.mousePosition));
 			}
 		}
 	}

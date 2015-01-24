@@ -21,7 +21,7 @@ public class CharacterMovements : MonoBehaviour {
             return;
 		AirTimeLeft -= Time.deltaTime;
 		if(AirTimeLeft < 0){
-			Debug.LogWarning("NO MORE AIR!!!");
+			// Debug.LogWarning("NO MORE AIR!!!");
 		}
 		
 		float move = Input.GetAxis("Horizontal");
