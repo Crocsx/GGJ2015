@@ -3,6 +3,7 @@ using System.Collections;
 
 public class pEnemy : MonoBehaviour {
     public int _degats;
+    protected bool _dealGame = true;
     protected Transform _transform;
     protected Transform _target;
 	// Use this for initialization
@@ -19,7 +20,8 @@ public class pEnemy : MonoBehaviour {
 
     public virtual void Effect()
     {
-        _target.GetComponent<CharacterRessources>().GetDamage(_degats);
+        if (_dealGame)
+            _target.GetComponent<CharacterRessources>().GetDamage(_degats);
     }
 
 	// Update is called once per frame
