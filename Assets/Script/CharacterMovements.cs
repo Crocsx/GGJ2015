@@ -6,7 +6,7 @@ public class CharacterMovements : MonoBehaviour {
 	public float maxSpeed = 10F;
      public bool facingRight =true ; 
      public bool _grounded = false;
-     public LayerMask groundLayer;
+     public Transform groundLabel;
     
 	// Use this for initialization
 	void Start () {
@@ -24,13 +24,13 @@ public class CharacterMovements : MonoBehaviour {
 			Flip();
 		}
 		
-		// RaycastHit hit;
-		if(Physics2D.Raycast(transform.position, -Vector2.up, renderer.bounds.size.y * 0.7f)){
+		RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up,renderer.bounds.size.y *0.7f,~(1 << 9));
+		if(hit.distance > 0){
 			_grounded = true;
 		}else
 			_grounded = false;
 
-		if(Input.GetButton("Jump")&& _grounded){
+		if(Input.GetButton("Jump") && _grounded){
 			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, maxSpeed);// maxSpeed;
 		}
 	}
