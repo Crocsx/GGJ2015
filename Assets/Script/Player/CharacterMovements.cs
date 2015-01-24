@@ -7,11 +7,12 @@ public class CharacterMovements : MonoBehaviour {
      public bool facingRight =true ; 
      public bool _grounded = false;
      public Transform groundLabel;
+     private Animator anim;
     
     public float AirTimeLeft = 10;
 	// Use this for initialization
 	void Start () {
-	
+		anim = gameObject.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -24,8 +25,11 @@ public class CharacterMovements : MonoBehaviour {
 			// Debug.LogWarning("NO MORE AIR!!!");
 		}
 		
+		// if(Input.GetAxis("Horizontal")!=0)
 		float move = Input.GetAxis("Horizontal");
 		rigidbody2D.velocity = new Vector2(move*maxSpeed, rigidbody2D.velocity.y);
+			anim.SetFloat("speed", Mathf.Abs(move));
+			anim.SetBool("isGrounded", _grounded);
 
 		if(move > 0 && !facingRight) {
 			Flip();
