@@ -15,6 +15,18 @@ public class Missile : pEnemy {
 	void Update () {
         _transform.Translate(_direction * (Time.deltaTime * 10));
 	}
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.transform.CompareTag("Player"))
+            Effect();
+        KillMe();
+    }
+
+    public void Effect()
+    {
+        if (_dealGame)
+            _target.GetComponent<CharacterRessources>().GetDamage(_degats);
+    }
 
     void AskDestroy()
     {  
