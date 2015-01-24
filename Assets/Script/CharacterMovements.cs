@@ -40,8 +40,8 @@ public class CharacterMovements : MonoBehaviour {
 		horizontalMove.Normalize();
 		Debug.Log(distance);
 		for(int i = 0;i < 2; i++){
-			Debug.DrawRay(new Vector2(transform.position.x,transform.position.y - renderer.bounds.size.y * 0.5f + renderer.bounds.size.y *i),horizontalMove * distance *3,Color.red);
-			hit = Physics2D.Raycast( new Vector2(transform.position.x,transform.position.y - renderer.bounds.size.y * 0.5f + renderer.bounds.size.y *i),horizontalMove,3 *distance,~(1<<9));
+			Debug.DrawRay(new Vector2(transform.position.x,transform.position.y - renderer.bounds.size.y * 0.5f + renderer.bounds.size.y *i),horizontalMove *renderer.bounds.size.y *0.55f,Color.red);
+			hit = Physics2D.Raycast( new Vector2(transform.position.x,transform.position.y - renderer.bounds.size.y * 0.5f + renderer.bounds.size.y *i),horizontalMove,renderer.bounds.size.y *0.55f,~(1<<9));
 			if(hit.distance > 0)
 				rigidbody2D.velocity = new Vector3(0, rigidbody2D.velocity.y, 0);
 		}
