@@ -15,7 +15,7 @@ public class Camera_controller : MonoBehaviour
         _transform = transform;
     }
 // Update is called once per frame
-    void Update ()
+    void FixedUpdate ()
     {
         if (_target)
         {
