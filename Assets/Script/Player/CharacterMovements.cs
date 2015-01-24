@@ -19,6 +19,9 @@ public class CharacterMovements : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
+
+    	// if(isActiveJetPack)
+    		// isActiveJetPack = false;
         if (freezed)
             return;
 		AirTimeLeft -= Time.deltaTime;
@@ -42,18 +45,19 @@ public class CharacterMovements : MonoBehaviour {
 		RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up,renderer.bounds.size.y *0.7f,~(1 << 9));
 		if(hit.distance > 0){
 			_grounded = true;
+				isActiveJetPack = false;
 		}else
 			_grounded = false;
 
 		if(Input.GetButton("Jump")){
-			maxSpeed *= 0.5f;
+
 			if(_grounded){
-				rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, maxSpeed);//jump
-			}
+				rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, maxSpeed*0.5f);//jump
+			}else
 			if( AirTimeLeft > 0 && rigidbody2D.velocity.y < 0){
+				isActiveJetPack = true;
 				rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, maxSpeed);//boost
 				AirTimeLeft -= 1;
-				isActiveJetPack = true;
 			}
 		}		
 	}
