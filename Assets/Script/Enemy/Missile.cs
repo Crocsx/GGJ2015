@@ -24,7 +24,7 @@ public class Missile : pEnemy {
 
     public void Effect()
     {
-        if (_dealGame)
+        if (_isReal)
             _target.GetComponent<CharacterRessources>().GetDamage(_degats);
     }
 

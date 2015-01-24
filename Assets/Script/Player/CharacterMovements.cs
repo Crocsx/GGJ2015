@@ -62,7 +62,7 @@ public class CharacterMovements : MonoBehaviour {
 		}		
 	}
 
-    public void Freeze(int duration)
+    public void Freeze(float duration)
     {
         freezed = true;
         Invoke("deFreeze", duration);

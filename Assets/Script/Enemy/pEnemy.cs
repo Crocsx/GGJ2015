@@ -3,7 +3,7 @@ using System.Collections;
 
 public class pEnemy : MonoBehaviour {
     public int _degats;
-    public bool _dealGame = true;
+    public bool _isReal = true;
     protected Transform _transform;
     protected Transform _target;
 	// Use this for initialization
@@ -19,8 +19,7 @@ public class pEnemy : MonoBehaviour {
     }
     public virtual void Effect()
     {
-        Debug.Log(_dealGame);
-        if (_dealGame)
+        if (_isReal)
             _target.GetComponent<CharacterRessources>().GetDamage(_degats);
     }
 

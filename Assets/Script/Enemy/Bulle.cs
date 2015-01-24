@@ -34,7 +34,8 @@ public class Bulle : pEnemy
 
     public override void Effect()
     {
-        _target.position = _target.position + _direction;
+        if (_isReal)
+            _target.position = _target.position + _direction;
     }
 
     void AskDestroy()

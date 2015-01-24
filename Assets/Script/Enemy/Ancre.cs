@@ -37,7 +37,8 @@ public class Ancre : pEnemy {
 
     public override void Effect()
     {
-        _target.GetComponent<CharacterRessources>().GetDamage(_degats);
+        if (_isReal)
+            _target.GetComponent<CharacterRessources>().GetDamage(_degats);
     }
 
     void SwitchSide()

@@ -11,6 +11,8 @@ public class Petrol : pEnemy {
 
     public override void Effect()
     {
+        if (!_isReal)
+            return;
         Transform cameraTransform = Camera.main.transform;
         Vector3 angles = new Vector3(-90, 0, 0);
         GameObject tache = Instantiate(tachePetrol, cameraTransform.transform.position + Vector3.forward, Quaternion.Euler(angles)) as GameObject;
