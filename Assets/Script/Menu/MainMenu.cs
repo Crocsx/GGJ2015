@@ -43,7 +43,6 @@ public class MainMenu : MonoBehaviour
         GUIStyle myStyle = new GUIStyle();
         myStyle.fontSize = 72;
         myStyle.normal.textColor = Color.white;
-
         //GUI.Label(new Rect(ScreenRatioY * 100, ScreenRatioY * 3, Screen.width, Screen.height), LevelToShow._name, myStyle);
 
         for (var i = 0; i < LevelToShow.buttonList.Length; i++)
