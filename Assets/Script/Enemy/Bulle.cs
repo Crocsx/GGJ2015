@@ -10,8 +10,10 @@ public class Bulle : pEnemy
     void Start()
     {
         base.Start();
-        _transform.eulerAngles = _transform.parent.eulerAngles;
+        Debug.Log(_transform.parent.up);
         _direction = _transform.parent.right;
+        _transform.eulerAngles = _transform.parent.eulerAngles;
+
     }
 
     // Update is called once per frame
@@ -20,7 +22,7 @@ public class Bulle : pEnemy
         maxCount -= Time.deltaTime;
         if (maxCount < 0)
             KillMe();
-        _transform.Translate(_direction * (Time.deltaTime * _speed));
+        _transform.Translate(_direction * (Time.deltaTime * _speed),Space.World);
     }
 
     void OnCollisionEnter2D(Collision2D coll) 
