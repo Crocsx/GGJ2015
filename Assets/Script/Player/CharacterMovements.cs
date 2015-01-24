@@ -8,6 +8,7 @@ public class CharacterMovements : MonoBehaviour {
      public bool _grounded = false;
      public Transform groundLabel;
      private Animator anim;
+     public bool isActiveJetPack =false;
     
     public float AirTimeLeft = 10;
 	// Use this for initialization
@@ -30,6 +31,7 @@ public class CharacterMovements : MonoBehaviour {
 		rigidbody2D.velocity = new Vector2(move*maxSpeed, rigidbody2D.velocity.y);
 			anim.SetFloat("speed", Mathf.Abs(move));
 			anim.SetBool("isGrounded", _grounded);
+			anim.SetBool("isActiveJetPack", isActiveJetPack);
 
 		if(move > 0 && !facingRight) {
 			Flip();
@@ -50,6 +52,7 @@ public class CharacterMovements : MonoBehaviour {
 			if( AirTimeLeft > 0 && rigidbody2D.velocity.y < 0){
 				rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, maxSpeed);//boost
 				AirTimeLeft -= 1;
+				isActiveJetPack = true;
 			}
 		}		
 	}
