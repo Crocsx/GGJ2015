@@ -42,7 +42,7 @@ public class CharacterMovements : MonoBehaviour {
 			Flip();
 		}
 		
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up,renderer.bounds.size.y *0.7f,~(1 << 9));
+		RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up,renderer.bounds.size.y *0.6f,~(1 << 9));
 		if(hit.distance > 0){
 			_grounded = true;
 				isActiveJetPack = false;
