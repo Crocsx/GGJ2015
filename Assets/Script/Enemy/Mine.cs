@@ -15,7 +15,10 @@ public class Mine : pEnemy {
     public override void Effect()
     {
         if (_isReal)
+        {
             _target.GetComponent<CharacterRessources>().GetDamage(_degats);
+            KillMe();
+        }
     }
 
 	// Update is called once per frame

@@ -5,6 +5,7 @@ public class Bulle : pEnemy
 {
     public float _speed;
     private Vector3 _direction;
+    private float maxCount = 10;
     // Use this for initialization
     void Start()
     {
@@ -15,6 +16,9 @@ public class Bulle : pEnemy
     // Update is called once per frame
     void Update()
     {
+        maxCount -= Time.deltaTime;
+        if (maxCount < 0)
+            KillMe();
         _transform.Translate(_direction * (Time.deltaTime * _speed));
     }
 
