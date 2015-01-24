@@ -19,20 +19,11 @@ public class Mine : pEnemy {
 
     public override void Effect()
     {
-<<<<<<< HEAD
         if (_isReal)
-        {
-            _target.GetComponent<CharacterRessources>().GetDamage(_degats);
-            KillMe();
-        }
-=======
-		if (_isReal && Vector3.Distance(_target.transform.position, transform.position) < _detectionRange)
             _target.GetComponent<CharacterRessources>().GetDamage(_degats);
 		
 		anim.SetBool("exploding",true);
 		Invoke("exploseMine",0.65f);
-    	
->>>>>>> origin/master
     }
     
 	void exploseMine(){
