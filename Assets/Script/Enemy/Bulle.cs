@@ -18,6 +18,20 @@ public class Bulle : pEnemy
         _transform.Translate(_direction * (Time.deltaTime * _speed));
     }
 
+    void OnCollisionEnter2D(Collision2D coll) 
+    {
+        Vector3 pos = _transform.position;
+        if (coll.transform.CompareTag("Map"))
+        {
+            KillMe();
+            return;
+        }
+        if (coll.transform.CompareTag("Player"))
+            Effect();
+        Physics2D.IgnoreCollision(_transform.collider2D, coll.transform.collider2D);
+        _transform.position = pos;
+    }
+
     public override void Effect()
     {
         _target.position = _target.position + _direction;

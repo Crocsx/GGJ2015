@@ -14,5 +14,6 @@ public class CharacterRessources : ILife {
 
     public override void Die()
     {
+        Debug.Log("Lose");
     }
 }
