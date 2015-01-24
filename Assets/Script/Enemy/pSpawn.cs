@@ -43,7 +43,7 @@ public class pSpawn : MonoBehaviour
         timeNextSpawn -= Time.deltaTime;
         if (timeNextSpawn < 0)
         {
-            GameObject newObject = Instantiate(_objectToSpawn, _transform.position + _transform.up, Quaternion.identity) as GameObject;
+            GameObject newObject = Instantiate(_objectToSpawn, _transform.position, Quaternion.identity) as GameObject;
             newObject.transform.GetComponent<pEnemy>()._isReal = _isReal;
             newObject.transform.parent = _transform;
             timeNextSpawn = Random.Range((_time - _timeFork), (_time + _timeFork));

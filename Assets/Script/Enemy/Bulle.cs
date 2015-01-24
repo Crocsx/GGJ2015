@@ -10,7 +10,8 @@ public class Bulle : pEnemy
     void Start()
     {
         base.Start();
-        _direction = _transform.parent.up;
+        _transform.eulerAngles = _transform.parent.eulerAngles;
+        _direction = _transform.parent.right;
     }
 
     // Update is called once per frame
