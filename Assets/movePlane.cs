@@ -11,6 +11,7 @@ public class movePlane : MonoBehaviour {
 	
 
 	void Start () {
+		transform.localScale = new Vector3(Camera.main.orthographicSize * Camera.main.rect.width,1,0.2f *Camera.main.orthographicSize * Camera.main.rect.height);
 	}
 	
 	void LateUpdate () {
