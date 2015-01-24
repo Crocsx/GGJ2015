@@ -12,10 +12,10 @@ public class Petrol : pEnemy {
     public override void Effect()
     {
         Transform cameraTransform = Camera.main.transform;
-        Transform tache = Instantiate(tachePetrol, transform.position, Quaternion.identity) as Transform;
-        tache.transform.GetComponent<Tache>().duration = _dureeTache;
+        Vector3 angles = new Vector3(-90, 0, 0);
+        Transform tache = Instantiate(tachePetrol, cameraTransform.transform.position + Vector3.forward, Quaternion.Euler(angles)) as Transform;
+        tache.transform.GetComponent<Tache>().Active(_dureeTache);
         tache.parent = cameraTransform;
-        tache.LookAt(cameraTransform);
     }
 
 	// Update is called once per frame

@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class Tache : MonoBehaviour {
-    public float duration;
 	// Use this for initialization
 	void Start () {
 	
@@ -10,11 +9,17 @@ public class Tache : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Invoke("Destroy", duration);
+        
 	}
 
-    void Destroy()
+    public void Active(float duration)
     {
+        Debug.Log("duration");
+        Invoke("killMe", duration);
+    }
+    void killMe()
+    {
+        Debug.Log("kill");
         GameObject.Destroy(this);
     }
 }
