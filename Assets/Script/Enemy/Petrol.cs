@@ -16,7 +16,6 @@ public class Petrol : pEnemy {
         Transform cameraTransform = Camera.main.transform;
         Vector3 angles = new Vector3(-90, 0, 0);
         GameObject tache = Instantiate(tachePetrol, cameraTransform.transform.position + Vector3.forward, Quaternion.Euler(angles)) as GameObject;
-        Debug.Log(tache.transform);
         tache.transform.GetComponent<Tache>().Active(_dureeTache);
         tache.transform.parent = cameraTransform;
     }
